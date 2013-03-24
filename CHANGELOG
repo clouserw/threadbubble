@@ -1,0 +1,51 @@
+Version 0.8 (2008-07-09)
+-----------
+- Official Thunderbird 3 support (tested on current nightly, 3.0a2pre+)
+
+Version 0.7 (2008-04-06)
+-----------
+(Never officially released - rolled in to 0.8)
+- Fixed a bug when sorted ascending in threaded view, new messages wouldn't sink to
+  the bottom of your list (the "top" in an ascending sort)
+
+Version 0.6 (2007-07-11)
+-----------
+- Updated the minimum version so AMO will accept it
+
+Version 0.5 (2007-05-05)
+-----------
+- Threadbubble now requires Thunderbird 2.0.0.0 or above, because I rewrote it to use
+  the msgnotificationservice class.  I was running into (I think) a bug in
+  thunderbird:
+
+  If you have a new message in an existing thread, and you delete the top
+  level element in that thread, the OnItemAdded event is called as if the new message
+  just arrived.  If you delete any other message in the thread other than the root
+  message, OnItemAdded is not fired, and if there is not a new message in the thread,
+  it's not fired.  This feels like a bug to me.
+
+  The problem I was having was, if you delete the top level message and there is only
+  2 total messages in the thread, the second would disappear from the folder until
+  the view was refreshed (note: the mail did not get deleted, it just didn't show up
+  in the view).  
+
+  Since I think we're leaning towards using the nsIMsgFolderNotificationService
+  interface, I didn't file a bug for this issue.
+
+
+Version 0.4 (2007-04-20)
+-----------
+- Added checks to make sure mail coming in is in the current account and folder
+  before updating the display
+
+Version 0.3 (2007-04-01)
+-----------
+- Added a setTimeout() around the whole thing, since gDBView wasn't ready sometimes
+- Added a check to make sure gDBView is around, and if it's not, don't throw an
+  uncaught exception
+
+Version 0.2
+-----------
+- Increased the maxVersion to 3.0a1 since it looks like that's what all the other
+  kids are doing.
+- Fixed the homepage URL

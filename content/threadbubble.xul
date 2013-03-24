@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<overlay id="threadbubble" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="threadbubble_funcs.js"/>
+    <script type="application/x-javascript" src="threadbubble.js"/>
+</overlay>
+

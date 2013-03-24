@@ -1,0 +1,2 @@
+content threadbubble content/
+overlay chrome://messenger/content/messenger.xul chrome://threadbubble/content/threadbubble.xul
